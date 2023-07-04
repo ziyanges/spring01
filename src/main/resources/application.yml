@@ -1,0 +1,34 @@
+server:
+  port: 80
+spring:
+ datasource:
+  druid:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/tb_tt?serverTimezone=UTC
+  username: root
+  password: 123456
+ redis:
+  port: 6379
+  host: localhost
+ cache:
+  type: redis
+  redis:
+   time-to-live: 10s
+ activemq:
+  broker-url: tcp://localhost:61616
+ jms:
+  template:
+   default-destination: luoziyang
+# cache:
+#  type: ehcache
+#  ehcache:
+#   config:
+#     classpath: ehcache.xml
+mybatis-plus:
+  configuration:
+   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+ level:
+  root: info # 默认的全局日志级别
+  org.springframework.web: debug # web相关的日志级别
